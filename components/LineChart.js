@@ -1,6 +1,8 @@
 "use client";
 import React from 'react'
 import { Line } from "react-chartjs-2";
+import { useState, useEffect } from 'react';
+
 
 import {
   Chart as ChartJS,
@@ -23,6 +25,8 @@ ChartJS.register(
   Filler
 );
 
+  
+
 const salesData = [
   { month: "January", sales: 800 },
   { month: "February", sales: 150 },
@@ -33,6 +37,25 @@ const salesData = [
 ];
 
 function LineChart() {
+  //malaria data
+  const [malariaDatum, setmalariaDatum] = useState([]);
+
+  useEffect(() => {
+
+    const malariaData = async () => {
+      console.log('use effect called')
+      const response = await fetch('api/malaria');
+      const data = await response.json();
+
+      setmalariaDatum(data);
+    }
+
+    malariaData();
+  }, [])
+
+  console.log(JSON.stringify(malariaDatum));
+
+
   const data = {
     labels: salesData.map((data) => data.month),
     datasets: [

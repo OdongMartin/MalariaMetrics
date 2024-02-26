@@ -12,12 +12,42 @@ const ReportPage = () => {
   const [diagnosis, setDiagnosis] = useState('');
   const [treatment, setTreatment] = useState('');
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    console.log('handle submit called')
     event.preventDefault();
-    // Perform validation and submit data to backend (not implemented in this example)
-    console.log('Form submitted:', { patientName, age, gender, location, symptoms, diagnosis, treatment });
-    // Clear form fields after submission
+    //perform validation and submit data to backend 
+    try {
+
+      const response = await fetch('/api/malaria', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          patientName,
+          age,
+          gender,
+          location,
+          symptoms,
+          diagnosis,
+          treatment
+        })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+  
+      console.log('Form submitted successfully');
+
+    } catch (error) {
+
+      console.error('Error submitting form:', error.message);
+    }
+
+    //console.log('Form submitted:', { patientName, age, gender, location, symptoms, diagnosis, treatment });
+    
+    //clear form fields after submission
     setPatientName('');
     setAge('');
     setGender('');
