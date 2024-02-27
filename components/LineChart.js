@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from 'react';
@@ -38,22 +38,41 @@ const salesData = [
 
 function LineChart() {
   //malaria data
-  const [malariaDatum, setmalariaDatum] = useState([]);
+  const [malariaData, setmalariaData] = useState([]);
+
+  //async try catch
+  // const fetchMalariaData = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:3000/api/malaria');
+  //     const data = await response.json();
+  //     return data;
+
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+
+  //   //setmalariaDatum(data);
+  // }
+  // const datum = await fetchMalariaData();
+
 
   useEffect(() => {
+    const fetchMalariaData = async () => {
+      try {
+        const response = await fetch('api/malaria');
+        if (!response.ok) {
+          throw new Error('Failed to fetch malaria data');
+        }
+        const malariaData = await response.json();
+        setmalariaData(malariaData);
 
-    const malariaData = async () => {
-      console.log('use effect called')
-      const response = await fetch('api/malaria');
-      const data = await response.json();
-
-      setmalariaDatum(data);
-    }
-
-    malariaData();
-  }, [])
-
-  console.log(JSON.stringify(malariaDatum));
+      } catch (error) {
+        console.error('Error fetching malaria data:', error.message);
+      }
+    };
+  
+    fetchMalariaData();
+  }, []);
 
 
   const data = {
@@ -141,6 +160,8 @@ function LineChart() {
         //   cursor: "pointer",
          }}
       >
+        <p className="text-9xl">{malariaData.length}</p>
+        {/* <p className="text-9xl">{malariaData.map((data) => <div>{data.age}</div>)}</p> */}
         <Line data={data} options={options}></Line>
       </div>
     </div>

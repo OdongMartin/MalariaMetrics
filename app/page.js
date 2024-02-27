@@ -1,4 +1,3 @@
-'use client'
 
 import Header from "@/components/Header";
 import TopCard from '@/components/TopCards';
@@ -38,9 +37,7 @@ const Home = () => {
       <div className="ml-20">
         <Header/>
         <TopCard />
-        <div className=''>
-          <Linechart />
-        </div>
+        <Linechart />
       </div>
     </>
   )
