@@ -160,7 +160,7 @@ function LineChart() {
         //   cursor: "pointer",
          }}
       >
-        <p className="text-9xl">{malariaData.length}</p>
+        <p className="text-sm">{malariaData.length}</p>
         {/* <p className="text-9xl">{malariaData.map((data) => <div>{data.age}</div>)}</p> */}
         <Line data={data} options={options}></Line>
       </div>
