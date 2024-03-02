@@ -88,7 +88,11 @@ const ReportPage = () => {
                 </div>
                 <div className="mb-4">
                 <label htmlFor="diagnosis" className="block font-semibold mb-2">Diagnosis</label>
-                <textarea id="diagnosis" value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)} required className="w-full px-4 py-2 border rounded-md" />
+                <select id="diagnosis" value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)} required className="w-full px-4 py-2 border rounded-md">
+                <option value="">Select Diagnosis</option>
+                    <option value="negative">Negative</option>
+                    <option value="positive">Positive</option>
+                </select>
                 </div>
                 <div className="mb-4">
                 <label htmlFor="treatment" className="block font-semibold mb-2">Treatment</label>

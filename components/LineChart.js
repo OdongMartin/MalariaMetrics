@@ -76,11 +76,13 @@ function LineChart() {
 
 
   const data = {
-    labels: salesData.map((data) => data.month),
+    //labels: salesData.map((data) => data.month),
+    labels: malariaData.map((data) => data.day),
     datasets: [
       {
         label: "Malaria Cases",
-        data: salesData.map((data) => data.sales),
+        //data: salesData.map((data) => data.sales),
+        data: malariaData.map((data) => data.cases),
         borderColor: "#cb0c9f",
         borderWidth: 1,
         pointBorderColor: "#cb0c9f",
@@ -124,7 +126,8 @@ function LineChart() {
             family: "Arial",
           },
         },
-        min: 50,
+        min: 0,
+        max: 10
       },
       x: {
         ticks: {
@@ -135,7 +138,7 @@ function LineChart() {
         },
         title: {
           display: true,
-          text: "Month",
+          text: "Date",
           padding: {
             top: 10,
           },
@@ -160,7 +163,7 @@ function LineChart() {
         //   cursor: "pointer",
          }}
       >
-        <p className="text-sm">{malariaData}</p>
+        {/*<p className="text-sm">{console.log("linechart: " + malariaData)}</p>*/}
         {/* <p className="text-9xl">{malariaData.map((data) => <div>{data.age}</div>)}</p> */}
         <Line data={data} options={options}></Line>
       </div>

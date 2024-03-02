@@ -32,7 +32,7 @@ const MalariaCaseSchema = new Schema({
     },
     reportedAt: {
       type: Date,
-      default: Date.now
+      default: Date.now,
     }
   });
   
