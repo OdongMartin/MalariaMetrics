@@ -1,6 +1,10 @@
 import { Schema, model, models } from "mongoose";
 
 const MalariaCaseSchema = new Schema({
+    reportingFacility: {
+      type: String,
+      required: true
+    },
     patientName: {
       type: String,
       required: true

@@ -11,6 +11,7 @@ const ReportPage = () => {
   const [symptoms, setSymptoms] = useState('');
   const [diagnosis, setDiagnosis] = useState('');
   const [treatment, setTreatment] = useState('');
+  const [reportingFacility, setreportingFacility] = useState('');
 
   const handleSubmit = async (event) => {
     console.log('handle submit called')
@@ -24,6 +25,7 @@ const ReportPage = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          reportingFacility,
           patientName,
           age,
           gender,
@@ -48,6 +50,7 @@ const ReportPage = () => {
     //console.log('Form submitted:', { patientName, age, gender, location, symptoms, diagnosis, treatment });
     
     //clear form fields after submission
+    reportingFacility('');
     setPatientName('');
     setAge('');
     setGender('');
@@ -63,7 +66,11 @@ const ReportPage = () => {
             <h1 className="text-2xl font-bold mb-4">Report Malaria Case</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                <label htmlFor="patientName" className="block font-semibold mb-2">Patient Name</label>
+                <label htmlFor="reportingFacility" className="block font-semibold mb-2">Reporting Facility</label>
+                <input type="text" id="reportingFacility" value={reportingFacility} onChange={(e) => reportingFacility(e.target.value)} required className="w-full px-4 py-2 border rounded-md" />
+                </div>
+                <div className="mb-4">
+                <label htmlFor="patientName" className="block font-semibold mb-2">Patient Name/ID</label>
                 <input type="text" id="patientName" value={patientName} onChange={(e) => setPatientName(e.target.value)} required className="w-full px-4 py-2 border rounded-md" />
                 </div>
                 <div className="mb-4">

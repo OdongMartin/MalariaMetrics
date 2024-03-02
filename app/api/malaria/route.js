@@ -3,11 +3,12 @@ import { connectToDB } from "@/utils/database";
 import MalariaCase from "@/models/malaria_data";
 
 export const POST = async (req) => {
-    const { patientName, age, gender, location, symptoms, diagnosis, treatment } = await req.json();
+    const { patientName, age, gender, location, symptoms, diagnosis, treatment, reportingFacility } = await req.json();
     try {
         await connectToDB();
         const newCase = new MalariaCase(
             {
+                reportingFacility: reportingFacility,
                 patientName: patientName, 
                 age: age, 
                 gender: gender, 
