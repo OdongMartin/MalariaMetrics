@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Facts = () => {
 
     var settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -19,17 +19,17 @@ const Facts = () => {
         autoplaySpeed: 5000,
       };
       return (
-        <div>
+        <div className='flex justify-center items-center'>
             {/* <h1 className="text-3xl font-bold mt-2 ml-10 mb-6">Malaria Information</h1> */}
         
             <div
-            className=' md:col-span-2 relative lg:h-[70vh] h-[50vh] m-4 w-auto p-8 border rounded-lg bg-gray-300'
-            style={{
-            width: "370px",
-            height: "400px",
-            //   padding: "20px",
-            //   cursor: "pointer",
-            }}
+            className=' md:col-span-2 relative md:h-[70vh] h-[50vh] w-[96vw] md:w-[32vw] lg:w-[35vw] mx-4 p-8 border rounded-lg bg-gray-300'
+            // style={{
+            // width: "400px",
+            // height: "400px",
+            // //   padding: "20px",
+            // //   cursor: "pointer",
+            // }}
             >
                 <Slider {...settings} >
                     <div>

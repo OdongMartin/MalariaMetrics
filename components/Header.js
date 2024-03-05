@@ -2,9 +2,8 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='flex justify-between px-4 pt-4 font-bold'>
+    <div className='flex justify-center px-4 pt-1 my-3 font-bold text-sm lg:text-base'>
         <h2>Dashboard</h2>
-        <h2>Welcome Back</h2>
     </div>
   )
 }

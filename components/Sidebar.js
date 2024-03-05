@@ -10,12 +10,12 @@ import { MdOutlineSchool } from "react-icons/md";
 const SideBar = ({ children }) => {
   return (
     <div className='flex'>
-      <div className='fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between'>
+      <div className='fixed top-0 left-0 h-full  w-14 md:w-20 p-4 bg-white border-r-[1px] flex flex-col justify-between z-10'>
         <div className='flex flex-col items-center'>
           <Link href="/">
             <div className=' text-white rounded-lg inline-block'>
               {/* <RxSketchLogo size={20}/> */}
-              <Image src='/images/MalariaMetricsLogo.jpeg' width={50} height={50} alt="logo" className='rounded-lg'/>
+              <Image src='/images/MalariaMetricsLogo.jpeg' width={50} height={50} alt="logo" className='rounded-lg hidden md:flex'/>
             </div>
           </Link>
 

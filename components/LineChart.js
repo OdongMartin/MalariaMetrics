@@ -121,7 +121,7 @@ function LineChart() {
             bottom: 10,
           },
           font: {
-            size: 30,
+            size: 18,
             //style: "italic",
             family: "Arial",
           },
@@ -143,7 +143,7 @@ function LineChart() {
             top: 10,
           },
           font: {
-            size: 25,
+            size: 18,
             //style: "italic",
             family: "Arial",
           },
@@ -153,15 +153,15 @@ function LineChart() {
   };
 
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       <div
-        className=' md:col-span-2 relative lg:h-[70vh] h-[50vh] m-4 w-auto p-4 border rounded-lg bg-white'
-         style={{
-           width: "850px",
-           height: "400px",
+        className=' md:col-span-2 relative md:h-[70vh] h-[30vh] w-[96vw] md:w-[55vw] flex justify-center items-center p-2  md:ml-4 border rounded-lg bg-white z-0'
+        //  style={{
+        //    width: "800px",
+        //    height: "400px",
         //   padding: "20px",
         //   cursor: "pointer",
-         }}
+        //  }}
       >
         {/*<p className="text-sm">{console.log("linechart: " + malariaData)}</p>*/}
         {/* <p className="text-9xl">{malariaData.map((data) => <div>{data.age}</div>)}</p> */}
