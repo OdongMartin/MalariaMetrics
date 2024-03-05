@@ -19,7 +19,7 @@ const ReportPage = () => {
     //perform validation and submit data to backend 
     try {
 
-      const response = await fetch('/api/malaria', {
+      const response = await fetch('/api/malaria-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

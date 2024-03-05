@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from 'react';
 
@@ -27,14 +27,14 @@ ChartJS.register(
 
   
 
-const salesData = [
-  { month: "January", sales: 800 },
-  { month: "February", sales: 150 },
-  { month: "March", sales: 200 },
-  { month: "April", sales: 120 },
-  { month: "May", sales: 180 },
-  { month: "June", sales: 250 },
-];
+// const salesData = [
+//   { month: "January", sales: 800 },
+//   { month: "February", sales: 150 },
+//   { month: "March", sales: 200 },
+//   { month: "April", sales: 120 },
+//   { month: "May", sales: 180 },
+//   { month: "June", sales: 250 },
+// ];
 
 function LineChart() {
   //malaria data
@@ -59,7 +59,7 @@ function LineChart() {
   useEffect(() => {
     const fetchMalariaData = async () => {
       try {
-        const response = await fetch('api/malaria');
+        const response = await fetch('api/malaria-data/cases-per-day');
         if (!response.ok) {
           throw new Error('Failed to fetch malaria data');
         }
