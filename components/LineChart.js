@@ -155,7 +155,7 @@ function LineChart() {
   return (
     <div className='flex justify-center items-center'>
       <div
-        className=' md:col-span-2 relative md:h-[70vh] h-[30vh] w-[96vw] md:w-[55vw] flex justify-center items-center p-2  md:ml-4 border rounded-lg bg-white z-0'
+        className=' md:col-span-2 relative md:h-[70vh] h-[25vh] w-[96vw] md:w-[55vw] flex justify-center items-center p-2  md:ml-4 border rounded-lg bg-white z-0'
         //  style={{
         //    width: "800px",
         //    height: "400px",
